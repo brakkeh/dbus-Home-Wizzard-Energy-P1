@@ -150,7 +150,7 @@ class DbusHomeWizzardEnergyP1Service:
  
     def _update(self):   
         try:
-            #get data from Shelly 3em
+            #get data from P1 meter
             meter_data = self._getP1Data()
             config = self._getConfig()
 
@@ -167,7 +167,7 @@ class DbusHomeWizzardEnergyP1Service:
             phases = config['DEFAULT']['Phases']
 
             if phases == '1':
-                #send data to DBus for 3pahse system
+                #send data to DBus for 1phase system
                 self._dbusservice['/Ac/Power'] = meter_data['active_power_w']
                 self._dbusservice['/Ac/L1/Voltage'] = meter_data['active_voltage_l1_v']
                 # self._dbusservice['/Ac/L2/Voltage'] = meter_data['active_voltage_l2_v']
@@ -178,12 +178,12 @@ class DbusHomeWizzardEnergyP1Service:
                 self._dbusservice['/Ac/L1/Power'] = meter_data['active_power_l1_w']
                 # self._dbusservice['/Ac/L2/Power'] = meter_data['active_power_l1_w']
                 # self._dbusservice['/Ac/L3/Power'] = meter_data['active_power_l1_w']
-                self._dbusservice['/Ac/Energy/Forward'] = (meter_data['total_power_import_kwh']/1000)
-                self._dbusservice['/Ac/Energy/Reverse'] = (meter_data['total_power_export_kwh']/1000)
-                self._dbusservice['/Ac/L1/Energy/Forward'] = (meter_data['total_power_import_kwh']/1000)
-                self._dbusservice['/Ac/L1/Energy/Reverse'] = (meter_data['total_power_export_kwh']/1000) 
+                self._dbusservice['/Ac/Energy/Forward'] = (meter_data['total_power_import_kwh'])
+                self._dbusservice['/Ac/Energy/Reverse'] = (meter_data['total_power_export_kwh'])
+                self._dbusservice['/Ac/L1/Energy/Forward'] = (meter_data['total_power_import_kwh'])
+                self._dbusservice['/Ac/L1/Energy/Reverse'] = (meter_data['total_power_export_kwh']) 
             if phases == '3':
-                #send data to DBus for 3pahse system
+                #send data to DBus for 3phase system
                 self._dbusservice['/Ac/Power'] = meter_data['active_power_w']
                 self._dbusservice['/Ac/L1/Voltage'] = meter_data['active_voltage_l1_v']
                 self._dbusservice['/Ac/L2/Voltage'] = meter_data['active_voltage_l2_v']
@@ -194,8 +194,8 @@ class DbusHomeWizzardEnergyP1Service:
                 self._dbusservice['/Ac/L1/Power'] = meter_data['active_power_l1_w']
                 self._dbusservice['/Ac/L2/Power'] = meter_data['active_power_l2_w']
                 self._dbusservice['/Ac/L3/Power'] = meter_data['active_power_l3_w']
-                self._dbusservice['/Ac/Energy/Forward'] = (meter_data['total_power_import_kwh']/1000)
-                self._dbusservice['/Ac/Energy/Reverse'] = (meter_data['total_power_export_kwh']/1000)
+                self._dbusservice['/Ac/Energy/Forward'] = (meter_data['total_power_import_kwh'])
+                self._dbusservice['/Ac/Energy/Reverse'] = (meter_data['total_power_export_kwh'])
                 # self._dbusservice['/Ac/L1/Energy/Forward'] = (meter_data['emeters'][0]['total']/1000)
                 # self._dbusservice['/Ac/L2/Energy/Forward'] = (meter_data['emeters'][1]['total']/1000)
                 # self._dbusservice['/Ac/L3/Energy/Forward'] = (meter_data['emeters'][2]['total']/1000)
