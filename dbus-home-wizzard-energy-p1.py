@@ -176,12 +176,12 @@ class DbusHomeWizzardEnergyP1Service:
                 # self._dbusservice['/Ac/L2/Current'] = meter_data['active_current_l2_a']
                 # self._dbusservice['/Ac/L3/Current'] = meter_data['active_current_l3_a']
                 self._dbusservice['/Ac/L1/Power'] = meter_data['active_power_l1_w']
-                # self._dbusservice['/Ac/L2/Power'] = meter_data['active_power_l1_w']
-                # self._dbusservice['/Ac/L3/Power'] = meter_data['active_power_l1_w']
-                # self._dbusservice['/Ac/Energy/Forward'] = (meter_data['total_power_import_kwh'])
-                # self._dbusservice['/Ac/Energy/Reverse'] = (meter_data['total_power_export_kwh'])
-                # self._dbusservice['/Ac/L1/Energy/Forward'] = (meter_data['total_power_import_kwh'])
-                # self._dbusservice['/Ac/L1/Energy/Reverse'] = (meter_data['total_power_export_kwh']) 
+                # self._dbusservice['/Ac/L2/Power'] = meter_data['active_power_l2_w']
+                # self._dbusservice['/Ac/L3/Power'] = meter_data['active_power_l3_w']
+                self._dbusservice['/Ac/Energy/Forward'] = (meter_data['total_power_import_kwh'])
+                self._dbusservice['/Ac/Energy/Reverse'] = (meter_data['total_power_export_kwh'])
+                self._dbusservice['/Ac/L1/Energy/Forward'] = (meter_data['total_power_import_kwh'])
+                self._dbusservice['/Ac/L1/Energy/Reverse'] = (meter_data['total_power_export_kwh']) 
             if phases == '3':
                 #send data to DBus for 3phase system
                 self._dbusservice['/Ac/Power'] = meter_data['active_power_w']
@@ -303,10 +303,10 @@ def main():
                 '/Ac/L1/Power': {'initial': 0, 'textformat': _w},
                 '/Ac/L2/Power': {'initial': 0, 'textformat': _w},
                 '/Ac/L3/Power': {'initial': 0, 'textformat': _w},
-                # '/Ac/L1/Energy/Forward': {'initial': 0, 'textformat': _kwh},
+                '/Ac/L1/Energy/Forward': {'initial': 0, 'textformat': _kwh},
                 # '/Ac/L2/Energy/Forward': {'initial': 0, 'textformat': _kwh},
                 # '/Ac/L3/Energy/Forward': {'initial': 0, 'textformat': _kwh},
-                # '/Ac/L1/Energy/Reverse': {'initial': 0, 'textformat': _kwh},
+                '/Ac/L1/Energy/Reverse': {'initial': 0, 'textformat': _kwh},
                 # '/Ac/L2/Energy/Reverse': {'initial': 0, 'textformat': _kwh},
                 # '/Ac/L3/Energy/Reverse': {'initial': 0, 'textformat': _kwh},
                 })
