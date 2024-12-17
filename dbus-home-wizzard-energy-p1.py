@@ -303,10 +303,10 @@ def main():
                 '/Ac/L1/Power': {'initial': 0, 'textformat': _w},
                 '/Ac/L2/Power': {'initial': 0, 'textformat': _w},
                 '/Ac/L3/Power': {'initial': 0, 'textformat': _w},
-                '/Ac/L1/Energy/Forward': {'initial': 0, 'textformat': _kwh},
+                # '/Ac/L1/Energy/Forward': {'initial': 0, 'textformat': _kwh},
                 # '/Ac/L2/Energy/Forward': {'initial': 0, 'textformat': _kwh},
                 # '/Ac/L3/Energy/Forward': {'initial': 0, 'textformat': _kwh},
-                '/Ac/L1/Energy/Reverse': {'initial': 0, 'textformat': _kwh},
+                # '/Ac/L1/Energy/Reverse': {'initial': 0, 'textformat': _kwh},
                 # '/Ac/L2/Energy/Reverse': {'initial': 0, 'textformat': _kwh},
                 # '/Ac/L3/Energy/Reverse': {'initial': 0, 'textformat': _kwh},
                 })
