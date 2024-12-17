@@ -19,7 +19,7 @@ After that call the install.sh script.
 
 The following script should do everything for you:
 ```
-wget https://github.com/arendbast/dbus-Home-Wizzard-Energy-P1/archive/refs/heads/main.zip
+wget https://github.com/brakkeh/dbus-Home-Wizzard-Energy-P1/archive/refs/heads/main.zip
 unzip main.zip "dbus-Home-Wizzard-Energy-P1-main/*" -d /data
 mv /data/dbus-Home-Wizzard-Energy-P1-main /data/dbus-Home-Wizzard-Energy-P1
 chmod a+x /data/dbus-Home-Wizzard-Energy-P1/install.sh
